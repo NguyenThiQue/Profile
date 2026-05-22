@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quế Nguyễn | Premium Portfolio - ERP & Full-stack Web Developer</title>
+    <meta name="description" content="Portfolio cá nhân của Nguyễn Thị Quế - Chuyên viên phát triển hệ thống ERP và Website doanh nghiệp cao cấp bằng ASP.NET, SQL Server và Delphi.">
+    <meta property="og:title" content="Quế Nguyễn | Premium Portfolio - ERP & Full-stack Developer">
+<meta property="og:description" content="Hồ sơ năng lực phát triển hệ thống ERP doanh nghiệp và Website Full-stack cao cấp bằng ASP.NET Core, SQL Server.">
+<meta property="og:image" content="/images/portfolio-thumbnail.png"> <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+    <div id="mouse-glow"></div>
+
+    <div id="loader">
+        <div class="loader-content">
+            <div class="loader-logo">QUẾ NGUYỄN</div>
+            <div style="display: flex; justify-content: center; margin-bottom: 1.5rem;">
+                <div class="loader-bar-container">
+                    <div class="loader-circle"></div>
+                </div>
+            </div>
+            <div class="loader-text">// ACCESSING PORTFOLIO... <span id="load-pct">0</span>%</div>
+        </div>
+    </div>
+
+    <header id="header">
+        <div class="container">
+            <a href="#hero" class="logo">Quế<span>Nguyễn</span></a>
+            
+            <div class="header-right">
+                <nav id="nav-menu">
+                    <ul>
+                        <li><a href="#hero" class="nav-link active">Trang chủ</a></li>
+                        <li><a href="#about" class="nav-link">Giới thiệu</a></li>
+                        <li><a href="#skills" class="nav-link">Kỹ năng</a></li>
+                        <li><a href="#experience" class="nav-link">Kinh nghiệm</a></li>
+                        <li><a href="#projects" class="nav-link">Dự án</a></li>
+                        <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+                    </ul>
+                </nav>
+
+                <div class="cv-download-container">
+                    <button class="btn btn-secondary" id="cv-dropdown-btn">
+                        <i class="fa-solid fa-download"></i> Tải CV <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="cv-dropdown-menu" id="cv-dropdown-menu">
+                        <a href="/files/NguyenThiQue_CV.pdf" download="CV_NguyenThiQue_Developer.pdf" class="cv-dropdown-item">
+                            <i class="fa-solid fa-file-pdf" style="color: #f43f5e;"></i> Định dạng PDF (.pdf)
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="burger" id="burger-toggle" aria-label="Toggle menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </button>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <div class="hero-welcome">Lập trình viên website</div>
+                    <h1>Nguyễn Thị Quế</h1>
+                    <div class="hero-tagline">
+                        <span id="typing-text"></span>
+                    </div>
+                    <p class="hero-desc">
+                        Kết hợp giữa công nghệ, sáng tạo để tạo nên những trải nghiệm số khác biệt.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn btn-primary">Xem dự án <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="https://zalo.me/0962403823" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-zalo">
+                                <i class="fa-solid fa-comment-dots"></i> Chat qua Zalo
+                            </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="avatar-glow"></div>
+                    <div class="avatar-card">
+                        <div class="avatar-frame">
+                            <img src="img/avartar.jpg" alt="Nguyen Thi Que">
+                            <div class="avatar-interface">
+                                <div class="interface-line"><span>Địa chỉ:</span> <span>HCMC, VN</span></div>
+                                <div class="interface-line"><span>Công nghệ:</span> <span>ASP.NET / SQL</span></div>
+                                <div class="interface-line"><span>Trạng thái:</span> <span>ONLINE</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="fade-in">
+        <div class="container">
+            <h2>Giới thiệu Bản Thân</h2>
+            <div class="about-grid">
+                <div class="glass-card">
+                    <p class="about-main-text" style="color: #fff; font-size: 1.15rem; margin-bottom: 2rem;">
+                        Là một lập trình viên yêu thích sự sáng tạo và công nghệ hiện đại, tôi tập trung vào việc xây dựng các hệ thống và trải nghiệm số mang phong cách chuyên nghiệp, tối ưu và khác biệt. Tôi đam mê biến những ý tưởng thành sản phẩm thực tế thông qua tư duy logic, thiết kế hiện đại và những dòng code chất lượng. Với tinh thần không ngừng học hỏi, tôi luôn mong muốn tạo ra các giải pháp công nghệ có giá trị và mang dấu ấn riêng
+                    </p>
+                    <p style="margin-bottom: 2.5rem;">
+                        Biến ý tưởng thành trải nghiệm số hiện đại bằng sự sáng tạo, tư duy logic và niềm đam mê công nghệ.
+                    </p>
+                    <div class="about-pillars">
+                        <div class="pillar-item">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <div>
+                                <h4>Web Development</h4>
+                                <p>Xây dựng giao diện hiện đại, tối ưu trải nghiệm người dùng.</p>
+                            </div>
+                        </div>
+                        <div class="pillar-item">
+                            <i class="fa-solid fa-database"></i>
+                            <div>
+                                <h4>ERP Development</h4>
+                                <p>Phát triển và tùy chỉnh hệ thống ERP phù hợp với quy trình vận hành thực tế của doanh nghiệp.</p>
+                            </div>
+                        </div>
+                        <div class="pillar-item">
+                            <i class="fa-solid fa-briefcase"></i>
+                            <div>
+                                <h4>UI/UX</h4>
+                                <p>Tạo nên những trải nghiệm số trực quan, hiện đại</p>
+                            </div>
+                        </div>
+                        <div class="pillar-item">
+                            <i class="fa-solid fa-brain"></i>
+                            <div>
+                                <h4>Backend Logic</h4>
+                                <p>Xây dựng luồng xử lý ổn định, tối ưu và đảm bảo khả năng mở rộng cho hệ thống.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-panel">
+                    <div class="glass-card stat-card">
+                        <div class="stat-num" data-target="2">0</div>
+                        <div class="stat-label">Năm Kinh Nghiệm</div>
+                    </div>
+                    <div class="glass-card stat-card">
+                        <div class="stat-num" data-target="12">0</div>
+                        <div class="stat-label">Dự Án Hoàn Thành</div>
+                    </div>
+                    <div class="glass-card stat-card">
+                        <div class="stat-num" data-target="8">0</div>
+                        <div class="stat-label">Phân Hệ ERP Triển Khai</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="fade-in">
+        <div class="container">
+            <h2>Kỹ Năng Chuyên Môn</h2>
+            <div class="skills-grid">
+                <div class="glass-card skill-card">
+                    <div class="skill-icon-wrapper"><i class="fa-code-branch fa-solid"></i></div>
+                    <div class="skill-info">
+                        <h3>ASP.NET</h3>
+                        <p>MVC & Web API Core</p>
+                    </div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-icon-wrapper"><i class="fa-hashtag fa-solid"></i></div>
+                    <div class="skill-info">
+                        <h3>C#</h3>
+                        <p>OOP & OOP Patterns</p>
+                    </div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-icon-wrapper"><i class="fa-cube fa-solid"></i></div>
+                    <div class="skill-info">
+                        <h3>Delphi</h3>
+                        <p>Phần mềm ERP</p>
+                    </div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-icon-wrapper"><i class="fa-database fa-solid"></i></div>
+                    <div class="skill-info">
+                        <h3>SQL Server</h3>
+                        <p>Xử lý truy vấn, Trigger</p>
+                    </div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-icon-wrapper"><i class="fa-html5 fa-brands"></i></div>
+                    <div class="skill-info">
+                        <h3>HTML5 / CSS3</h3>
+                        <p>Cấu trúc Semantic chuẩn</p>
+                    </div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-icon-wrapper"><i class="fa-js fa-brands"></i></div>
+                    <div class="skill-info">
+                        <h3>JavaScript</h3>
+                        <p>Xử lý Logic DOM thuần</p>
+                    </div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-icon-wrapper"><i class="fa-bootstrap fa-brands"></i></div>
+                    <div class="skill-info">
+                        <h3>Bootstrap</h3>
+                        <p>Tối ưu layout</p>
+                    </div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-icon-wrapper"><i class="fa-cloud fa-solid"></i></div>
+                    <div class="skill-info">
+                        <h3>REST API</h3>
+                        <p>Xây dựng & Tích hợp đầu cuối</p>
+                    </div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-icon-wrapper"><i class="fa-network-wired fa-solid"></i></div>
+                    <div class="skill-info">
+                        <h3>ERP System</h3>
+                        <p>Luồng kế toán, kho bãi</p>
+                    </div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-icon-wrapper"><i class="fa-laptop-code fa-solid"></i></div>
+                    <div class="skill-info">
+                        <h3>Responsive Design</h3>
+                        <p>Tương thích đa màn hình</p>
+                    </div>
+                </div>
+                <div class="glass-card skill-card">
+                    <div class="skill-icon-wrapper"><i class="fa-magnifying-glass fa-solid"></i></div>
+                    <div class="skill-info">
+                        <h3>LINQ</h3>
+                        <p>Truy vấn dữ liệu hướng đối tượng</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="fade-in">
+        <div class="container">
+            <h2>Kinh nghiệm làm việc</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="glass-card timeline-card">
+                        <span class="timeline-date">07/2025 - Hiện tại</span>
+                        
+                        <h3>Công ty TNHH Giải Pháp Doanh Nghiệp Lĩnh Anh</h3>
+                        <div class="timeline-role">Web Developer</div>
+                        <p>Chịu trách nhiệm thiết kế kiến trúc tổng thể frontend và backend cho các sản phẩm Web. Tối ưu hóa API và cấu trúc cơ sở dữ liệu SQL.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">ASP.NET</span>
+                            <span class="tag">Frontend + Backend</span>
+                            <span class="tag">API Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="glass-card timeline-card">
+                        <span class="timeline-date">04/2024 - 06/2025</span>
+                        
+                        <h3>Digiwin Việt Nam</h3>
+                        <div class="timeline-role">ERP Developer</div>
+                        <p>Trực tiếp lập trình mở rộng các module: Quản lý Hóa đơn (Invoice Module), Đơn mua hàng (Purchase Order), và Quản trị Tồn kho (Inventory) bằng môi trường Delphi và cơ sở dữ liệu SQL Server.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Delphi</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">Invoice</span>
+                            <span class="tag">Inventory</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="glass-card timeline-card">
+                        <span class="timeline-date">12/2023 - 03/2024</span>
+                        
+                        <h3>Công ty TNHH Keizu Việt Nam</h3>
+                        <div class="timeline-role">Thực tập sinh Công nghệ</div>
+                        <p>Tiếp cận giải pháp phần mềm doanh nghiệp. Tham gia nghiên cứu và phát triển các thành phần giao diện động cùng xử lý logic.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Salesforce</span>
+                            <span class="tag">Apex</span>
+                            <span class="tag">LWC</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="fade-in">
+    <div class="container">
+        <h2>Dự Án Tiêu Biểu</h2>
+        <div class="projects-grid">
+            
+            <div class="glass-card project-card">
+                <div class="project-img-wrapper">
+                    <img src="https://placehold.co/600x400/0c071e/a855f7?text=Eboss+Website" alt="Eboss Website">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h3>Eboss Website</h3>
+                    <p>Phát triển hệ thống website trên nền tảng eBOSS với khả năng quản lý dữ liệu, tích hợp API và tối ưu luồng xử lý giữa frontend và backend</p>
+                    <div class="project-tags">
+                        <span class="tag">ASP.NET</span>
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">UI/UX</span>
+                    </div>
+                    <a href="https://eboss.vn/" class="project-link">Khám phá hệ thống <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="glass-card project-card">
+                <div class="project-img-wrapper">
+                    <img src="https://placehold.co/600x400/0c071e/a855f7?text=ERP+Customization" alt="ERP System">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h3>ERP System Customization</h3>
+                    <p>Tinh chỉnh, viết mới các phân hệ quản lý kho bãi, xuất hóa đơn tự động tốc độ cao cho doanh nghiệp.</p>
+                    <div class="project-tags">
+                        <span class="tag">Delphi</span>
+                        <span class="tag">T-SQL</span>
+                        <span class="tag">System Design</span>
+                    </div>
+                    <a href="#" class="project-link">Khám phá hệ thống <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="glass-card project-card">
+                <div class="project-img-wrapper">
+                    <img src="https://placehold.co/600x400/0c071e/a855f7?text=Online+Shop+App" alt="Online Shop App">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h3>App bán hàng online</h3>
+                    <p>Ứng dụng bán hàng trực tuyến với các chức năng mua bán, trò chuyện, quản lý sản phẩm và đơn hàng, mang đến trải nghiệm mua sắm hiện đại và tiện lợi cho người dùng.</p>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">FireBase</span>
+                        <span class="tag">My SQL</span>
+                    </div>
+                    <a href="#" class="project-link">Khám phá hệ thống <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="glass-card project-card">
+                <div class="project-img-wrapper">
+                    <img src="https://placehold.co/600x400/0c071e/a855f7?text=Comic+Website" alt="Comic Website System">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h3>Website đọc truyện</h3>
+                    <p>Website đọc truyện trực tuyến với giao diện hiện đại, hỗ trợ tìm kiếm, phân loại truyện và tối ưu trải nghiệm đọc trên nhiều thiết bị.</p>
+                    <div class="project-tags">
+                        <span class="tag">Java</span>
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">SQL</span>
+                    </div>
+                    <a href="#" class="project-link">Khám phá hệ thống <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="glass-card project-card">
+                <div class="project-img-wrapper">
+                    <img src="https://placehold.co/600x400/0c071e/a855f7?text=NongLamVien+Website" alt="NongLamVien Website">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-info">
+                    <h3>nonglamvien Website</h3>
+                    <p>Phát triển hệ thống website NongLamVien tích hợp quản lý dữ liệu, hiển thị sản phẩm và tối ưu giao diện trên nhiều thiết bị.</p>
+                    <div class="project-tags">
+                        <span class="tag">ASP.NET</span>
+                        <span class="tag">SQL Server</span>
+                        <span class="tag">UI/UX</span>
+                    </div>
+                    <a href="https://nonglamvien.vn/" class="project-link">Khám phá hệ thống <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <section id="services" class="fade-in">
+        <div class="container">
+            <h2>Giải Pháp Tôi Cung Cấp</h2>
+            <div class="services-grid">
+                <div class="glass-card service-card">
+                    <i class="fa-solid fa-globe service-icon"></i>
+                    <h3>Website Doanh Nghiệp</h3>
+                    <p>Thiết kế kiến trúc giao diện Web độc quyền, đồng bộ nhận diện thương hiệu, tối ưu tốc độ và chuyển đổi khách hàng lý tưởng.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <i class="fa-solid fa-bolt service-icon"></i>
+                    <h3>Landing Page</h3>
+                    <p>Xây dựng trang tiếp thị sản phẩm công nghệ với hiệu ứng mượt mà, cấu trúc scannable dễ đọc thúc đẩy hành vi chuyển đổi.</p>
+                </div>
+                <div class="glass-card service-card premium-tier">
+                    <i class="fa-solid fa-sliders service-icon"></i>
+                    <h3>UI/UX & Responsive Design</h3>
+                    <p>Thiết kế giao diện hiện đại, responsive và tối ưu trải nghiệm trên nhiều thiết bị.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <i class="fa-solid fa-users-gear service-icon"></i>
+                    <h3>Mobile & E-Commerce Application</h3>
+                    <p>Phát triển ứng dụng thương mại điện tử với các chức năng mua bán, quản lý sản phẩm, chat trực tiếp và xử lý đơn hàng, mang đến trải nghiệm mua sắm hiện đại và tiện lợi.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <div class="container">
+            <h2>Kết nối với tôi</h2>
+            <div class="contact-grid">
+                <div class="contact-info-card glass-card">
+    <h3>Thông tin trực tiếp</h3>
+    <p class="contact-desc">Bạn có dự án cần phát triển hoặc muốn trao đổi cơ hội hợp tác? Hãy kết nối qua các kênh trực tiếp bên dưới.</p>
+    
+    <div class="contact-methods">
+        <div class="method-item">
+            <i class="fa-solid fa-envelope" style="color: var(--neon-violet);"></i>
+            <div>
+                <span>Email cá nhân</span>
+                <p>quenguyenbt@gmail.com</p>
+            </div>
+        </div>
+        <div class="method-item">
+            <i class="fa-solid fa-comment-dots" style="color: #0068ff;"></i>
+            <div>
+                <span>Zalo Chat</span>
+                <p>0962403823 (Quế Nguyễn)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="zalo-qr-zone">
+        <div class="qr-box">
+            <img src="img/zalo-qr.jpg" alt="Zalo QR Quế Nguyễn">
+        </div>
+        <div class="qr-text">
+            <h4>Quét mã QR Zalo</h4>
+            <p>Quét mã bằng điện thoại để kết nối và trao đổi công việc trực tiếp nhanh chóng.</p>
+        </div>
+    </div>
+</div>
+
+                <div class="contact-form-card glass-card">
+                    <h3>Gửi yêu cầu nhanh</h3>
+                    <form id="portfolio-contact-form">
+                        <div class="form-group">
+                            <input type="text" class="form-input" id="form-name" placeholder=" " required>
+                            <label for="form-name" class="form-label">Họ và tên của bạn</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" id="form-email" placeholder=" " required>
+                            <label for="form-email" class="form-label">Địa chỉ Email của bạn</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-input" id="form-msg" placeholder=" " required></textarea>
+                            <label for="form-msg" class="form-label">Nội dung/Yêu cầu dự án sơ bộ</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn" id="submit-btn-text">
+                            <i class="fa-solid fa-paper-plane"></i> Mở Mail gửi thông điệp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-wrapper">
+            <div class="logo" style="font-size: 1.25rem;">
+                Quế<span>Nguyễn</span>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 Nguyễn Thị Quế. All Rights Reserved. 
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
